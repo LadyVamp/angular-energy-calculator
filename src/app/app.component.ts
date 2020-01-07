@@ -41,10 +41,6 @@ export class AppComponent {
     ];
   }
 
-  // submit() {
-  //   console.log(this.form.value);
-  // }
-
   calc() {
     console.log(this.form.value);
     this.result = (this.weight * this.form.value.activities * this.time / 60).toFixed(2);
