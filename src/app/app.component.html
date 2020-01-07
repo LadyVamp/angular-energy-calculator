@@ -1,0 +1,26 @@
+<h1>
+	Калькулятор энергозатрат
+</h1>
+<form [formGroup]="form">
+	<label for="weight">Вес, кг</label>
+	<input type="number" formControlName="weight" [(ngModel)]="weight"/>
+
+	<label for="activities">Активность</label>
+	<select formControlName="activities" id="activities">
+    <option *ngFor="let activity of activities; let i = index" [value]="activities[i].calories">
+      {{activities[i].name}}
+    </option>
+  </select>
+
+	<label for="time">Продолжительность активности, минут</label>
+	<input type="number" id="time" formControlName="time" [(ngModel)]="time"/>
+
+	<br><br>
+	<button (click)="calc()">Посчитать</button>
+	<br><br>
+
+	<div *ngIf="result">
+		{{result}} килокалорий
+	</div>
+
+</form>
